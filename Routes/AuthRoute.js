@@ -1,5 +1,5 @@
 const { Signup, Login, Logout, GetUserInfo } = require('../Controllers/AuthController');
-const { userVerification } = require('../Middlewares/AuthMiddleware'); // Ensure correct path
+const { userVerification } = require('../MiddleWares/AuthMiddleware'); // Ensure correct path
 const router = require('express').Router();
 const cookieParser = require('cookie-parser');
 router.use(cookieParser());

@@ -123,7 +123,7 @@ const cookieParser = require("cookie-parser");
 // Import routes & middleware
 const authRoute = require("./Routes/AuthRoute.js")
 
-const { userVerification } = require("./Middlewares/AuthMiddleware.js");
+const { userVerification } = require("./MiddleWares/AuthMiddleware.js");
 
 // Import models
 const HoldingsModel = require("./model/HoldingsModel.js");
