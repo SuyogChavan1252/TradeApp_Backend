@@ -142,7 +142,7 @@ app.use(express.json());
 
 // ✅ Proper CORS Configuration
 app.use(cors({ 
-  origin: ["http://localhost:3000", "http://localhost:3001"], // Allowed origins
+  origin: ["http://localhost:3000", "http://localhost:3001","https://trade-app-frontend-teal.vercel.app/","https://trade-app-dashboard.vercel.app/"], // Allowed origins
   credentials: true, // ✅ Allow cookies & credentials
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
