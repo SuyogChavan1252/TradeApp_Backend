@@ -96,7 +96,7 @@ module.exports.Signup = async (req, res) => {
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production", // True in production
-      sameSite: "strict"
+      sameSite: "None"
     });
 
     res
@@ -142,7 +142,7 @@ module.exports.Login = async (req, res) => {
     res.cookie("token", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict"
+      sameSite: "None"
     });
 
     res
