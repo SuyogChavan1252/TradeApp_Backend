@@ -175,12 +175,17 @@ module.exports.Logout = async (req, res) => {
 
 module.exports.GetUserInfo = async (req, res) => {
   try {
+    console.log("🍪 Cookies received:", req.cookies); // ✅ Debugging
+
     const token = req.cookies.token;
+    if (!token) return res.status(401).json({ message: "Unauthorized" });
+
     const decoded = jwt.verify(token, process.env.TOKEN_KEY);
+    console.log("✅ Token decoded:", decoded);
+
     res.json(decoded.data);
   } catch (error) {
-    res
-      .status(500)
-      .json({ message: "Something went wrong. Please try again. " });
+    console.error("❌ JWT Error:", error.message); // ✅ Log error details
+    res.status(500).json({ message: "Invalid or expired token" });
   }
-}
+};
